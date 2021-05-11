@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /rabbitmq
+spring:
+  application:
+    name: rabbitmq-spring-boot-starter
+  rabbitmq:
+    host: f.xicc.cc
+    port: 23508
+    username: luna
+    password: czy1024
+    virtual-host: /ems
+    connection-timeout: 3000
+    template:
+      reply-timeout: 4000
+    cache:
+      channel:
+        checkout-timeout: 3000
+
+luna:
+  queue:
+    basic: luna-baisc
+    worker: luna-worker
+  exchange:
+    fanout: luna-fanout
+    direct: luna-direct
+    topic: luna-topic
